@@ -3,7 +3,7 @@
 # Lesson 1
 # 22/4/2024
 #############
-print("This programme is a simple calcualtor that can multiply two numbers together!")
+print("This programme is a simple calculator that can multiply two numbers together!")
 
 # Input first number
 first_num=int(input("Enter your first number: "))
