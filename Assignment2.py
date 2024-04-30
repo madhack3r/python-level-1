@@ -27,7 +27,7 @@ while True:
             if (debug_mode):
               print(f"Value of i is : {i} \n")
 
-            # Divide by integer and if the remainder is 0 
+            # Divide by i and if the remainder is 0 
             # then it is not a prime as it can be divide by 
             # a number apart from 1 and itself
             if (number % i) == 0:
@@ -46,7 +46,8 @@ while True:
         else:
             print(f"{number} is a prime number\n")
   except:
-    print("OK, you are bored, let's end this")
+    # 
+    print("OK, you are bored and not entered an integer, let's end this")
     break
     
     
