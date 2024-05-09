@@ -29,6 +29,11 @@ while True:
     # Add the amt to the ledger
     now = datetime.datetime.now()
     amt=float(input("Please enter an income to add to your balance: "))
+    
+     # Debug - inserting income
+    if (debug_mode):
+      print(f"Credited {amt} at {now}")
+      
     account.append({"Timestamp" : now.strftime("%x %X"), "Transaction": "Income", "amount": amt})
 
   elif request == 'e':
@@ -39,7 +44,13 @@ while True:
     # Add the amt to the ledger
     # Multiply by -1 so that it is held as a debit
     now = datetime.datetime.now()
-    amt=float(input("Please enter an income to add to your balance: "))*-1
+    amt=float(input("Please enter an expense to deduct from your balance: "))*-1
+
+     # Debug - inserting income
+    if (debug_mode):
+      print(f"Debited {amt} at {now}")
+
+
     account.append({"Timestamp" : now.strftime("%x %X"), "Transaction": "Expense", "amount": amt})
     
   elif request == 'v':
