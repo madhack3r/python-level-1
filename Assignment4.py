@@ -9,7 +9,7 @@ import hashlib
 # Debug Mode - set to True to print debug messages
 debug_mode = False
 
-# Structure that candidates
+# Structure that holds candidate data and the number of votes that they have
 candidates = {}
 
 # Dictionary that holds voter register
@@ -60,7 +60,7 @@ def has_voted_before(encypted_voter):
   
 
 # Start of Programme
-print("Welcome to our simple password manager!\n")
+print("Welcome to the Secure Voting System!")
 
 # Set up the candidate list
 setup_candidates()
