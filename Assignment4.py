@@ -83,8 +83,7 @@ while True:
     # Get the name of the candidate that you want to vote for
     candidate = input("Please enter the name of the candidate you want to vote for :")
     # Get the name from the voter register
-    name = input("Please now enter your name according to your government 
-    :")
+    name = input("Please now enter your name according to your government id :")
     # Hash the name for the dominion systems    
     hashed_voter = hash_voter(name)
 
