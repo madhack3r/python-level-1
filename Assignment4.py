@@ -12,7 +12,7 @@ debug_mode = False
 # Structure that holds candidate data and the number of votes that they have
 candidates = {}
 
-# Dictionary that holds voter register
+# Dictionary that holds voter register to ensure that no one votes twice
 voter_register = {}
 
 
@@ -25,7 +25,8 @@ def hash_voter(voter_name):
 # Print the menu
 # @returns choice of values
 def print_menu():
-  print("\nMenu:\n")
+  print("\nMenu:")
+  print("*****")
   print("1. Vote for a candidate")
   print("2. View voting results")
   print("3. Quit")
@@ -33,6 +34,7 @@ def print_menu():
   return choice
 
 # Set up the list of candidates
+# Define names and associated votes to 0
 def setup_candidates():
   candidates["Don"] = 0
   candidates["Hallie"] = 0
@@ -42,13 +44,15 @@ def setup_candidates():
 
 # Print the list of candidates
 def print_candidates():
+  print("\n")
   for n,v in candidates.items():
-    print(f"candidate {n} has {v}")
-    
+    print(f"Candidate {n} has {v} {'vote' if v==1 else 'votes'} ")
+
+
 # Print the list of candidates to chose from
 def print_candidate_choices():
   for n,v in candidates.items():
-    print(f"You can vote for candidate {n}")
+    print(f"You can vote for {n}")
 
 # Check if the voter has voted before
 # by checking the list
@@ -65,7 +69,11 @@ print("Welcome to the Secure Voting System!")
 # Set up the candidate list
 setup_candidates()
 
-# Ask user whether they want to continue
+# Print the names of the candidates
+print_candidate_choices()
+
+# Loop forever until user asks to quit
+# Ask user whether their options
 while True:
 
   # Print the menu items
@@ -75,7 +83,8 @@ while True:
     # Get the name of the candidate that you want to vote for
     candidate = input("Please enter the name of the candidate you want to vote for :")
     # Get the name from the voter register
-    name = input("Please now enter your name:")
+    name = input("Please now enter your name according to your government 
+    :")
     # Hash the name for the dominion systems    
     hashed_voter = hash_voter(name)
 
@@ -87,7 +96,7 @@ while True:
         # Add name to the voter register and an arbitary value pair
         # into the voter register - remember to bring your ID
         voter_register[hashed_voter] = "True"
-        # Increment value of candidate in the candiate dictionary
+        # Increment value of candidate in the candidate dictionary
         candidates[candidate] += 1
     else:
       print("Candidate does not exist")
